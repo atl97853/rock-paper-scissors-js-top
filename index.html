@@ -33,15 +33,20 @@
         // c)
         function playRound (playerSelection, computerSelection) {
             if (playerSelection === computerSelection) {
-                return `It's a tie!!!`;
+                console.log(`It's a tie!!!`)
+                return null;
             } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-                return `You win! ${playerSelection} beats ${computerSelection}`;
+                console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+                return true;
             } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-                return `You win! ${playerSelection} beats ${computerSelection}`;
+                console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+                return true;
             } else if (playerSelection == 'scissors' && computerSelection === 'paper') {
-                return `You win! ${playerSelection} beats ${computerSelection}`;
+                console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+                return true;
             } else {
-                return`You lose! ${computerSelection} beats ${playerSelection}`;
+                console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
+                return false;
             }
         }
         // console.log(playRound(playerSelection(), getComputerChoice()))
@@ -49,11 +54,22 @@
         function game(playRound) {
             let gameON = true;
             while (gameON) {
+                // rounds
                 let rounds = 5;
                 if (rounds <= 0) {
                     gameON = false
                 }
-                console.log(playRound(playerSelection(), getComputerChoice()));
+                // score
+                let playerScore;
+                let computerScore;
+                if (playRound() === true) {
+                    playerScore += 1;
+                } else if (playRound() === false) {
+                    computerScore += 1;
+                }
+                // calculate winner
+
+
                 rounds -= 1;
             }
         }
