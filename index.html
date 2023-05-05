@@ -68,7 +68,11 @@
                     computerScore += 1;
                 }
                 // calculate winner
-
+                if (playerScore > computerScore) {
+                    console.log('YOU WIN THE GAME!!!');
+                } else {
+                    console.log('Sorry, you lose the game');
+                }
 
                 rounds -= 1;
             }
