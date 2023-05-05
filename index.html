@@ -8,6 +8,7 @@
 </head>
 <body style="background-color: black; color: white;">
     <script>
+        // a)
         function getComputerChoice() {
             let randNum = Math.floor(Math.random() * (3 - 1 + 1) + 1);
             let compSelection;
@@ -22,14 +23,14 @@
         }
         // just for testing 
         // console.log(getComputerChoice())
-        
+        // b)
         function playerSelection () {
             let playerSelection = prompt('Rock, Paper or Scissor?: ')
             return playerSelection.toLowerCase()
         }
         // just for testing
         // console.log(playerSelection())
-
+        // c)
         function playRound (playerSelection, computerSelection) {
             if (playerSelection === computerSelection) {
                 return `It's a tie!!!`;
@@ -43,7 +44,19 @@
                 return`You lose! ${computerSelection} beats ${playerSelection}`;
             }
         }
-        console.log(playRound(playerSelection(), getComputerChoice()))
+        // console.log(playRound(playerSelection(), getComputerChoice()))
+        // d)
+        function game(playRound) {
+            let gameON = true;
+            while (gameON) {
+                let rounds = 5;
+                if (rounds <= 0) {
+                    gameON = false
+                }
+                console.log(playRound(playerSelection(), getComputerChoice()));
+                rounds += 1;
+            }
+        }
     </script>
 </body>
 </html>
