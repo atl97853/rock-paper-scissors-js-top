@@ -10,25 +10,29 @@
     <script>
         function getComputerChoice() {
             let randNum = Math.floor(Math.random() * (3 - 1 + 1) + 1);
-            let compChoice;
+            let compSelection;
             if (randNum === 1) {
-                compChoice = 'Rock';
+                compSelection = 'Rock';
             } else if (randNum === 2) {
-                compChoice = 'Paper' 
+                compSelection = 'Paper' 
             } else {
-                compChoice = 'Scissors'
+                compSelection = 'Scissors'
             }
-            return compChoice
+            return compSelection
         }
         // just for testing 
         console.log(getComputerChoice())
         
         function playerSelection () {
-            let playerChoice = prompt('Rock, Paper or Scissor?: ')
-            return playerChoice
+            let playerSelection = prompt('Rock, Paper or Scissor?: ')
+            return playerSelection
         }
         // just for testing
         console.log(playerSelection())
+
+        function playRound (playerSelection, computerSelection) {
+
+        }
     </script>
 </body>
 </html>
