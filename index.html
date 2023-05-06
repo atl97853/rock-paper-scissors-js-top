@@ -59,9 +59,19 @@
             let computerScore = 0;
             let gameresult;
             while (gameOn) {
-                // play new round
-                gameresult = playRound('rock',getComputerChoice());
-                // rounds 
+                // decreases the number of rounds 
+                rounds -= 1
+                 // play new round
+                 gameresult = playRound('rock',getComputerChoice());             
+                // score
+                if (gameresult === true) {
+                    playerScore += 1;
+                } else if (gameresult === false) {
+                    computerScore += 1;
+                }
+                // just testing
+                console.log(rounds, playerScore, computerScore) 
+                // rounds checking
                 if (rounds <= 0) {
                     // calculate winner
                     if (playerScore > computerScore) {
@@ -72,17 +82,8 @@
                         console.log('Sorry, you lose the game');
                     }
                     gameOn = false;
-                }                
-                // score
-                if (gameresult === true) {
-                    playerScore += 1;
-                } else if (gameresult === false) {
-                    computerScore += 1;
                 }
-                // just testing
-                console.log(rounds, playerScore, computerScore) 
                 
-                rounds -= 1
             }
         }
         game()
