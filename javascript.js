@@ -38,6 +38,7 @@ function playRound (e, computerSelection) {
     }
 };
 function testingEvent (a,b) {
+    // this function is just for testing
     const playerSelection = a.target.className;
     console.log(playerSelection);
     console.log(b);
