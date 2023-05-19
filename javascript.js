@@ -25,19 +25,19 @@ function playRound (e, computerSelection) {
     const playerSelection = e.target.className;
     
     if (playerSelection === computerSelection) {
-        console.log(`It's a tie!!!`)
+        div.textContent = `It's a tie!!!`;
         return null;
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-        console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+        div.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
         return true;
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+        div.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
         return true;
     } else if (playerSelection == 'scissors' && computerSelection === 'paper') {
-        console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+        div.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
         return true;
     } else {
-        console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
+        div.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
         return false;
     }
 }
@@ -98,10 +98,4 @@ buttons.forEach(button => button.addEventListener('click', (button) => {
     playRound(button, getComputerChoice());
 }));
 
-// const paper = document.querySelector('.paper');
-// paper.addEventListener('click', function(e){
-//     let paper = e.target.className;
-//     console.log(paper);
-//     console.log(typeof(paper))
-// });
-// ("click", () => { test1("four");
+const div = document.querySelector('.display-results');
